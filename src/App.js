@@ -10,7 +10,7 @@ function App() {
   const getData = async (launchSuccess, landSuccess, launchYear) => {
     await axios
       .get(
-        `https://api.spacexdata.com/v3/launches?limit=5&launch_success=${
+        `https://api.spacexdata.com/v3/launches?limit=20&launch_success=${
           launchSuccess || ''
         }&land_success=${landSuccess || ''}&launch_year=${launchYear || ''}`
       )
@@ -24,15 +24,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <h1 className="main-heading">SpaceX Launch Programs</h1>
+      <h1 className="main-heading">SpaceX Launch Programs</h1>
 
+      <div className="sidebar">
         <Filters
           cb={val =>
             getData(val.launchSuccess, val.landSuccess, val.launchYear)
           }
         />
+      </div>
 
+      <div className="container">
         {data.map(launch => (
           <Launch data={launch} />
         ))}
