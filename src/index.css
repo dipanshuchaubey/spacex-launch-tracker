@@ -1,3 +1,79 @@
 body {
+  margin: 0px;
+  padding: 0px;
   background-color: #f9f9fa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.main-heading {
+}
+
+/* Make section a card */
+section {
+  padding: 15px 15px;
+  margin: 10px 0px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  background-color: #fff;
+}
+
+.section-heading {
+  font-size: 20px;
+}
+
+.sub-heading {
+  text-align: center;
+}
+
+.filter-button {
+  color: #fff;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 13px;
+  border-width: 0px;
+  padding: 5px 15px;
+  border-radius: 7px;
+  background-color: rgb(102, 180, 102);
+}
+
+.filter-button:hover {
+  background-color: green;
+}
+
+.filter-button.selected {
+  background-color: green;
+}
+
+.lead-image {
+}
+
+.image {
+  width: 15%;
+}
+
+.launch-heading {
+}
+
+.launch-detail-head {
+  font-weight: bold;
+}
+
+.launch-detail-item {
+  font-weight: normal;
+}
+
+footer {
+  position: static;
+  background-color: rgb(126, 145, 148);
+  font-weight: bold;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
 }
