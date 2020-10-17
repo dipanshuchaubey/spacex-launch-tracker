@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Filters from './components/Filters'
+import Launch from './components/Launch'
 import axios from 'axios'
 import './index.css'
 
@@ -31,7 +32,15 @@ function App() {
             getData(val.launchSuccess, val.landSuccess, val.launchYear)
           }
         />
+
+        {data.map(launch => (
+          <Launch data={launch} />
+        ))}
       </div>
+
+      <footer>
+        <p>Developed By: Dipanshu Chaubey</p>
+      </footer>
     </div>
   )
 }
