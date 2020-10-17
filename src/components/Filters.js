@@ -26,12 +26,12 @@ const Filters = ({ cb }) => {
   })
 
   return (
-    <section>
+    <section className="filter">
       <h3 className="section-heading">Filters</h3>
 
-      <div>
+      <div className="center-align">
         <p className="sub-heading">Lauch Year</p>
-        <div className="horizontal-line"></div>
+        <hr className="horizontal-line" />
 
         {years.map(year => (
           <button
@@ -48,10 +48,9 @@ const Filters = ({ cb }) => {
             {year}
           </button>
         ))}
-      </div>
 
-      <div>
         <p className="sub-heading">Successful Lauch</p>
+        <hr className="horizontal-line" />
 
         <button
           onClick={() => {
@@ -80,10 +79,9 @@ const Filters = ({ cb }) => {
         >
           False
         </button>
-      </div>
 
-      <div>
         <p className="sub-heading">Successful Landing</p>
+        <hr className="horizontal-line" />
 
         <button
           onClick={() => {
