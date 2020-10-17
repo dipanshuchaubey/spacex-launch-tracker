@@ -36,7 +36,7 @@ const Filters = ({ cb }) => {
         {years.map(year => (
           <button
             onClick={() => {
-              cb({ launchYear: year })
+              cb({ ...activeFiler, launchYear: year })
               setActiveFilter({ ...activeFiler, launchYear: year })
             }}
             className={
@@ -55,11 +55,11 @@ const Filters = ({ cb }) => {
 
         <button
           onClick={() => {
-            cb({ launchSuccess: true })
-            setActiveFilter({ ...activeFiler, launchSuccess: true })
+            cb({ ...activeFiler, launchSuccess: 'true' })
+            setActiveFilter({ ...activeFiler, launchSuccess: 'true' })
           }}
           className={
-            activeFiler.launchSuccess
+            activeFiler.launchSuccess === 'true'
               ? 'filter-button selected'
               : 'filter-button'
           }
@@ -69,11 +69,11 @@ const Filters = ({ cb }) => {
 
         <button
           onClick={() => {
-            cb({ launchSuccess: false })
-            setActiveFilter({ ...activeFiler, launchSuccess: false })
+            cb({ ...activeFiler, launchSuccess: 'false' })
+            setActiveFilter({ ...activeFiler, launchSuccess: 'false' })
           }}
           className={
-            activeFiler.launchSuccess === false
+            activeFiler.launchSuccess === 'false'
               ? 'filter-button selected'
               : 'filter-button'
           }
@@ -87,11 +87,13 @@ const Filters = ({ cb }) => {
 
         <button
           onClick={() => {
-            cb({ landSuccess: true })
-            setActiveFilter({ ...activeFiler, landSuccess: true })
+            cb({ ...activeFiler, landSuccess: 'true' })
+            setActiveFilter({ ...activeFiler, landSuccess: 'true' })
           }}
           className={
-            activeFiler.landSuccess ? 'filter-button selected' : 'filter-button'
+            activeFiler.landSuccess === 'true'
+              ? 'filter-button selected'
+              : 'filter-button'
           }
         >
           True
@@ -99,11 +101,11 @@ const Filters = ({ cb }) => {
 
         <button
           onClick={() => {
-            cb({ landSuccess: false })
-            setActiveFilter({ ...activeFiler, landSuccess: false })
+            cb({ ...activeFiler, landSuccess: 'false' })
+            setActiveFilter({ ...activeFiler, landSuccess: 'false' })
           }}
           className={
-            activeFiler.landSuccess === false
+            activeFiler.landSuccess === 'false'
               ? 'filter-button selected'
               : 'filter-button'
           }

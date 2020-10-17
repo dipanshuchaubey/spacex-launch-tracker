@@ -4,7 +4,11 @@ const Launch = ({ data }) => {
   return (
     <section>
       <div className="lead-image">
-        <img className="image" src={data.links.mission_patch_small} />
+        <img
+          className="image"
+          src={data.links.mission_patch_small}
+          alt={data.mission_name}
+        />
       </div>
 
       <h3 className="launch-heading">{data.mission_name}</h3>

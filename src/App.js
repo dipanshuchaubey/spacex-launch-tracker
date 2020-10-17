@@ -10,9 +10,9 @@ function App() {
   const getData = async (launchSuccess, landSuccess, launchYear) => {
     await axios
       .get(
-        `https://api.spacexdata.com/v3/launches?limit=100&&launch_success=${
+        `https://api.spacexdata.com/v3/launches?limit=5&launch_success=${
           launchSuccess || ''
-        }&&land_success=${landSuccess || ''}&&launch_year=${launchYear || ''}`
+        }&land_success=${landSuccess || ''}&launch_year=${launchYear || ''}`
       )
       .then(data => setData(data.data))
       .catch(err => console.log(err))
