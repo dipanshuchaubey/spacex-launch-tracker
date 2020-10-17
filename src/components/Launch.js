@@ -14,7 +14,15 @@ const Launch = ({ data }) => {
       <h3 className="launch-heading">{data.mission_name}</h3>
 
       <p className="launch-detail-head">
-        Mission IDs: <span className="launch-detail-item">154545</span>
+        Mission IDs:{' '}
+        {Object.keys(data.mission_id).length === 0 && (
+          <span className="launch-detail-item">NA</span>
+        )}
+        <ul>
+          {data.mission_id.map(id => (
+            <li className="launch-detail-item">{id}</li>
+          ))}
+        </ul>
       </p>
       <p className="launch-detail-head">
         Launch Year:{' '}
